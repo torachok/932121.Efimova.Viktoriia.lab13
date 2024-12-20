@@ -1,0 +1,19 @@
+﻿@model QuizQuestion
+
+@{
+    ViewData["Title"] = "Hello Quiz";
+}
+
+<h1>Quiz</h1>
+
+<form asp-action="Quiz" method="post">
+    <input type="hidden" name="questionId" value="@Model.Id" />
+    <label>@Model.Question</label>
+    <div class="quiz-form">
+        <input type="number" name="userAnswer" value="@Model.UserAnswer" required />
+    </div>
+    <div class="quiz-buttons">
+        <button type="submit">Next</button>
+        <button type="submit" name="finish" value="true">Finish</button>
+    </div>
+</form>
